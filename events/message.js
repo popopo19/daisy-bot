@@ -17,6 +17,7 @@ module.exports = (client, msg) => {
       msg.reply("!dice [number]")
     }
 
+// !rps
   } else if (words[0] === "!rps") {
     msg.reply('Choose rock, paper, or scissors.');
   }
