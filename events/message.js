@@ -6,7 +6,7 @@ module.exports = (client, msg) => {
     return msg.channel.send(msg.author.username);
   } else if (words[0] === "!dice") {
     let len = words.length
-    if (!isNaN(words[1]) || len == 2) {
+    if (!isNaN(words[1]) && len == 2) {
       let rand = Math.floor(Math.random() * words[1])
       msg.reply(rand)
     } else {
