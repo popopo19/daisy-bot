@@ -17,4 +17,4 @@ module.exports = (client, msg) => {
       msg.reply("!dice [number]")
     }
   }
-}
+}//hello
