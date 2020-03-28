@@ -3,7 +3,7 @@ module.exports = {
 }
 
 function eventHandler(client, msg) {
-  console.log(msg.Message.content)
+  console.log(client)
   if (msg.content === 'ping') {
     console.log("Pong")
     msg.reply('pong no life');
