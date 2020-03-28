@@ -20,7 +20,8 @@ module.exports = (client, msg) => {
 // !rps
   } else if (words[0] === "!rps") {
     msg.reply('Choose rock, paper, or scissors.');
-  } 
+  } (word[1] === "rock") {
+    msg.reply('You lose');
 
 // User didn't type in right command
     } else if (words[0][0] == '!') {
