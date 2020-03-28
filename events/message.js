@@ -16,5 +16,7 @@ module.exports = (client, msg) => {
     } else {
       msg.reply("!dice [number]")
     }
+  } else if (words[0][0] == "!" || words[0] == "!help") {
+    console.log("Asking for help")
   }
-}//hello
+}
