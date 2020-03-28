@@ -1,9 +1,13 @@
 module.exports = (client, msg) => {
   let words = msg.content.split(" ")
-  if (msg.content === 'ping') {
+
+// ping
+  if (msg.content.toLowerCase() === 'ping') {
     msg.reply('pong no life');
   } else if (words[0] === "!name") {
     return msg.channel.send(msg.author.username);
+
+// !dice
   } else if (words[0] === "!dice") {
     let len = words.length
     if (!isNaN(words[1]) && len == 2) {
