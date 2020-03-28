@@ -1,10 +1,8 @@
 module.exports = (client, msg) => {
-  console.log("msg content: " + msg.content)
-  if (msg.content === 'ping') {
-    console.log("Pong")
+  let words = msg.content.split(" ")
+  if (words[0] === 'ping') {
     msg.reply('pong no life');
-  } else if (msg.content === "!name") {
-    console.log("Name")
+  } else if (words[0] === "!name") {
     return msg.channel.send(msg.author.username);
   }
 }
