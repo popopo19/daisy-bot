@@ -10,7 +10,6 @@ client.on('ready', () => {
 fs.readdir("./events/", (err, files) => {
   files.forEach(file => {
     const eventHandler = require(`./events/${file}`)
-    console.log("eventHandler: " + eventHandler)
     const eventName = file.split(".")[0]
     console.log("eventName: " + eventName)
     client.on(eventName, (...arg) => eventHandler.eventHandler(client, arg))
