@@ -1,9 +1,5 @@
-module.exports = {
-  eventHandler
-}
-
-function eventHandler(client, msg) {
-  console.log(msg.channgel.type)
+module.exports = (client, msg) => {
+  console.log("msg content: " + msg.content)
   if (msg.content === 'ping') {
     console.log("Pong")
     msg.reply('pong no life');
