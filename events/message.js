@@ -22,12 +22,10 @@ module.exports = (client, msg) => {
     msg.reply('Choose rock, paper, or scissors.');
   } if (word[1] === "rock") {
     msg.reply('You lose');
-  }
 
 // User didn't type in right command
     } else if (words[0][0] == '!') {
       msg.reply("There is no such command. Type !help for a list of commands")
-
 
     } else if (words[0] == '!help') {
 
