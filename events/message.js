@@ -1,4 +1,8 @@
-module.exports = (client, msg) => {
+module.exports = {
+  eventHandler
+}
+
+function eventHandler(client, msg) {
   if (msg.content === 'ping') {
     return msg.reply('pong no life');
   } else if (msg.content === "!name") {
