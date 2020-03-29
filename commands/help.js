@@ -1,5 +1,5 @@
 module.exports = msg => {
-  const cmd_list = require("./cmd.list.json")
+  const cmd_list = require("./cmd_list.json")
   let reply_msg = "List of commands\n"
 
   for (let i = 0; i < cmd_list.length; i++) {
