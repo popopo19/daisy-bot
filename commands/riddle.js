@@ -7,7 +7,7 @@ module.exports = (client, msg) => {
     let rand = Math.floor(Math.random() * cmd.riddle.questions.length)
 
     cmd.riddle.current = rand
-    msg.channel.send(cmd.riddle.questions[rand] + "\nTo answer: !riddle [answer] OR\n for new riddle: !riddle -n")
+    msg.channel.send(cmd.riddle.questions[rand] + "\nTo answer: !riddle [answer] \n New riddle: !riddle -n")
   // If riddle is already asked, check for correctness
   } else {
 
