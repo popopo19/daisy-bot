@@ -3,7 +3,7 @@ Personal bot for Discord.
 
 ## Naming convention
 
-__Functions and variables:__
+__Functions:__
 
 ```
 // camalCase function names
@@ -11,9 +11,5 @@ __Functions and variables:__
 function camalCase () {
   // Body
 }
-
-// camalCase variable names
-
-let camalCase = 10
 
 ```

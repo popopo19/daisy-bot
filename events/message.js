@@ -20,9 +20,12 @@ module.exports = (client, msg) => {
 
 // User didn't type in right command
     } else if (words[0][0] == '!') {
-      msg.reply("There is no such command. Type !help for a list of commands")
+      const wrong_cmd = require("../commands/wrong_cmd.js")
+      wrong_cmd(msg)
 
+// !help
     } else if (words[0] == '!help') {
-
+      const help = require("../commands/help.js")
+      help(msg)
     }
 }
