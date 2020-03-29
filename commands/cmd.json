@@ -3,10 +3,15 @@
     "!dice",
     "!help"
   ],
-  "riddle" : [
-    "What month of the year has 28 days?",
-    ["all", "12"],
-    "What's always coming but never arrives?",
-    ["tomorrow"]
-  ]
+  "riddle" : {
+    "questions" : [
+      "What month of the year has 28 days?",
+      "What's always coming but never arrives?",
+    ],
+    "answers" : [
+      ["all", "12"],
+      ["tomorrow"]
+    ],
+    "current" : null
+  }
 }
