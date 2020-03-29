@@ -4,7 +4,6 @@ module.exports = (client, msg) => {
   // commands
   if (words[0][0] == '!') {
 
-    // !dice
     if (words[0] === "!dice") {
       const dice = require("../commands/dice.js")
       dice(msg, words)
@@ -20,7 +19,10 @@ module.exports = (client, msg) => {
       const riddle = require("../commands/riddle.js")
       riddle(client, msg)
 
-    // !help
+    } else if (words[0] === '!motivate') {
+      const motivate = require("../commands/motivate.js")
+      motivate(msg)
+
     } else if (words[0] == '!help') {
       const help = require("../commands/help.js")
       help(msg)
@@ -31,7 +33,7 @@ module.exports = (client, msg) => {
       wrong_cmd(msg)
     }
   } else {
-    // ping
+
     if (msg.content.toLowerCase() === 'ping') {
       msg.reply('pong');
     }
