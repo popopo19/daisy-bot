@@ -15,7 +15,7 @@ module.exports = (client, msg) => {
       console.log("Input: ", words[i])
       for (let j = 0; j < cmd.riddle.answers[cmd.riddle.current].length; j++) {
         console.log("Answers")
-        if (words[i] == cmd.riddle.answers[j]) {
+        if (words[i] == cmd.riddle.answers[cmd.riddle.current][j]) {
           correct = true
         }
       }
