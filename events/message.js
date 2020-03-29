@@ -36,6 +36,7 @@ module.exports = (client, msg) => {
 
     if (msg.content.toLowerCase() === 'ping') {
       msg.reply('pong');
+      console.log(msg.mentions)
     }
   }
 }
