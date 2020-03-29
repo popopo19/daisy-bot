@@ -8,12 +8,14 @@ module.exports = (client, msg) => {
 
     cmd.riddle.current = rand
     msg.channel.send(cmd.riddle.questions[rand] + "\nTo answer: !riddle [answer] \n New riddle: !riddle -n")
-  // If riddle is already asked, check for correctness
-  } else {
 
+  } else if (cmd.riddle.current != null && words.length == 1) {
+    msg.channel.send(cmd.riddle.questions[cmd.riddle.current] + "\nTo answer: !riddle [answer] \n New riddle: !riddle -n")
+
+  // Checks if user answer is correct
+  } else {
     let correct = false
 
-    // Checks if user answer is correct
     for (let i = 1; i < words.length; i++) {
       for (let j = 0; j < cmd.riddle.answers[cmd.riddle.current].length; j++) {
         if (words[i].toLowerCase() == cmd.riddle.answers[cmd.riddle.current][j].toLowerCase()) {
