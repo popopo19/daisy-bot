@@ -33,8 +33,8 @@ module.exports = (client, msg) => {
       wrong_cmd(msg)
     }
   } else {
-    
-    console.log(msg.mentions)
+
+    console.log(msg.mentions.members)
     if (msg.content.toLowerCase() === 'ping') {
       msg.reply('pong');
     }
