@@ -1,9 +1,12 @@
 {
-  "list" : [
-    "!dice",
-    "!help",
-    "!riddle"
-  ],
+  "help" : {
+    "list" : [
+      "!dice",
+      "!help",
+      "!motivate",
+      "!riddle"
+    ]
+  },
   "riddle" : {
     "questions" : [
       "How many months of the year has 28 days?",
