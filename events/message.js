@@ -20,9 +20,8 @@ module.exports = (client, msg) => {
 // !rps
   } else if (words[0] === "!rps") {
     player_bot === random('rock','paper','scissor');
-  } if (word[1]) === "rock") & (player_bot === 'rock') {
+  } else if (word[1] === "rock" && player_bot === 'rock') {
     msg.reply('Tie');
-  }
 
 // User didn't type in right command
     } else if (words[0][0] == '!') {
