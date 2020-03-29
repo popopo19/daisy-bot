@@ -19,13 +19,13 @@ module.exports = (client, msg) => {
     msg.reply('Tie');
 
 // User didn't type in right command
-    } else if (words[0][0] == '!') {
-      const wrong_cmd = require("../commands/wrong_cmd.js")
-      wrong_cmd(msg)
+} else if (words[0] == '!help') {
+  const help = require("../commands/help.js")
+  help(msg)
 
 // !help
-    } else if (words[0] == '!help') {
-      const help = require("../commands/help.js")
-      help(msg)
-    }
+} else if (words[0][0] == '!') {
+  const wrong_cmd = require("../commands/wrong_cmd.js")
+  wrong_cmd(msg)
+  }
 }
