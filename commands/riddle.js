@@ -2,7 +2,7 @@ module.exports = (client, msg) => {
   const cmd = require("../commands/cmd.json")
   let words = msg.content.split(" ")
 
-  if (riddle.current == null || words.length == 1) {
+  if (cmd.riddle.current == null || words.length == 1) {
     let rand = Math.floor(Math.random() * cmd.riddle.questions.length)
 
     cmd.riddle.current = rand
