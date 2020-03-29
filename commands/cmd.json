@@ -7,11 +7,21 @@
   "riddle" : {
     "questions" : [
       "How many months of the year has 28 days?",
-      "What's always coming but never arrives?"
+      "What's always coming but never arrives?",
+      "David’s parents have three sons: Snap, Crackle, and what’s the name of the third son?",
+      "What can you catch, but not throw?",
+      "If there are three apples and you take away two, how many apples do you have?",
+      "What five-letter word becomes shorter when you add two letters to it?",
+      "If you drop me I’m sure to crack, but give me a smile and I’ll always smile back. What am I?"
     ],
     "answers" : [
-      ["all", "12"],
-      ["tomorrow"]
+      ["all", "12", "twelve"],
+      ["tomorrow"],
+      ["David", "him"],
+      ["cold", "sickness", "flu"],
+      ["2". "two"],
+      ["short"],
+      ["mirror"]
     ],
     "current" : null
   }
