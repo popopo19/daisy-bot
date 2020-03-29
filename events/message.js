@@ -16,7 +16,7 @@ module.exports = (client, msg) => {
       msg.reply('Tie');
 
 
-    } else if (wrods[0] === '!riddle') {
+    } else if (words[0] === '!riddle') {
       const riddle = require("../commands/riddle.js")
       riddle(client, msg)
 
