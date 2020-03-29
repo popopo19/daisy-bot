@@ -12,9 +12,7 @@ module.exports = (client, msg) => {
     let correct = false
 
     for (let i = 1; i < words.length; i++) {
-      console.log("Input:", words[i])
-      for (let j = 0; j < cmd.riddle.answers.length; j++) {
-        console.log("Answer:", cmd.riddle.answers[j])
+      for (let j = 0; j < cmd.riddle.answers[cmd.riddle.current].length; j++) {
         if (words[i] == cmd.riddle.answers[j]) {
           correct = true
         }
