@@ -14,7 +14,7 @@ module.exports = (client, msg) => {
 
 // !rps
   } else if (words[0] === "!rps") {
-    let player_bot === random('rock','paper','scissor');
+    // let player_bot = random('rock','paper','scissor');
   } else if (words[0] === "rock" && player_bot === 'rock') {
     msg.reply('Tie');
 
