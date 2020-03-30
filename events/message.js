@@ -36,18 +36,9 @@ module.exports = (client, msg) => {
       wrong_cmd(msg)
     }
   } else if (mention_users.length != 0) {
-    for (let i = 0; i < mention_users.length; i++) {
-      if (mention_users[i].id === '203585398671147008') {
-        const twilio = require("twilio")
-        const twilio_client = new twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN)
-
-        twilio_client.messages.create({
-          to: process.env.YANG_NUM,
-          from: process.env.TWILIO_NUM,
-          body: msg.content
-        })
-      }
-    }
+    const text_zalk = require("../message/text_zalk.js")
+    text_zalk(msg, mention_users)
+  }
 
   } else {
 
