@@ -1,7 +1,7 @@
 # daisy-bot
 Personal bot for Discord.
 
-## Feature
+## Features
 
 * Commands
   * !dice !help !motivate !riddle

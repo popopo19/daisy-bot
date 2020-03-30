@@ -37,7 +37,7 @@ module.exports = (client, msg) => {
     }
   } else if (mention_users.length != 0) {
     const text_zalk = require("../message/text_zalk.js")
-    text_zalk(msg, mention_users)
+    if (!msg.author.bot) text_zalk(msg, mention_users)
 
   } else {
 
