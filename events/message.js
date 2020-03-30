@@ -34,7 +34,7 @@ module.exports = (client, msg) => {
     }
   } else {
 
-    console.log(msg.mentions.users)
+    console.log(msg.mentions.users[0])
     if (msg.content.toLowerCase() === 'ping') {
       msg.reply('pong');
     }
