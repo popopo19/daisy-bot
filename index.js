@@ -16,3 +16,6 @@ fs.readdir("./events/", (err, files) => {
 })
 
 client.login(process.env.BOT_TOKEN)
+
+// const twilio = require("twilio")
+// const twilio_client = new twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN)
