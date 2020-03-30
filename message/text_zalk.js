@@ -12,4 +12,5 @@ module.exports = (msg, mention_users) => {
         body: msg.content
       })
     }
+  }
 }
