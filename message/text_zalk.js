@@ -9,7 +9,8 @@ module.exports = (msg, mention_users) => {
       console.log("1st Split:", words)
 
       for (let j = 0; j < words.length; j++) {
-        if (words[j].match(/<a/gi).length == 1) {
+        console.log("Word:", words[j])
+        if (words[j].match(/<@/gi).length == 1) {
           words[j] = words[j].username
         }
       }
