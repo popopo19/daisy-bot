@@ -10,7 +10,7 @@ module.exports = (msg, mention_users) => {
 
       for (let j = 0; j < words.length; j++) {
         console.log("Word:", words[j])
-        if (words[j].match(/<@/gi).length != null) {
+        if (words[j][0] == '<' && words[j][1] == '@') {
           words[j] = words[j].username
         }
       }
