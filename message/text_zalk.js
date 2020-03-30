@@ -9,7 +9,7 @@ module.exports = (msg, mention_users) => {
       console.log("1st Split:", words)
 
       for (let j = 0; j < words.length; j++) {
-        if (typeof words[j].splice(0, 2) == "<@") {
+        if (words[j].splice(0, 2) == "<@") {
           words[j] = words[j].username
         }
       }
