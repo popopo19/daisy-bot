@@ -16,7 +16,7 @@ module.exports = (msg, mention_users) => {
       }
 
       console.log("2nd Split:", words)
-      words.join()
+      words = words.join(" ")
       console.log("Joined:", words)
 
       // twilio_client.messages.create({
