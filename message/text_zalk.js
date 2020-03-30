@@ -13,10 +13,12 @@ module.exports = (msg, mention_users) => {
         }
       }
 
+      words.join("")
+
       twilio_client.messages.create({
         to: process.env.YANG_NUM.toString(),
         from: process.env.TWILIO_NUM.toString(),
-        body: msg.content
+        body: words
       })
     }
   }
