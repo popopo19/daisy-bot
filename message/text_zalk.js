@@ -10,13 +10,13 @@ module.exports = (msg, mention_users) => {
 
       for (let j = 0; j < words.length; j++) {
         console.log("Word:", words[j])
-        if (words[j].match(/<@/gi).length == 1) {
+        if (words[j].match(/<@/gi).length != null) {
           words[j] = words[j].username
         }
       }
 
       console.log("2nd Split:", words)
-      words.join(" ")
+      words.join()
       console.log("Joined:", words)
 
       // twilio_client.messages.create({
