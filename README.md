@@ -1,6 +1,14 @@
 # daisy-bot
 Personal bot for Discord.
 
+## Feature
+
+* Commands
+  * !dice !help !motivate !riddle
+* APIs
+  * Discord
+  * Twilio
+
 ## Organization of the code
 
 The program that gets run is __index.js__. It listens for events and the event handler is in the __events folder__.
