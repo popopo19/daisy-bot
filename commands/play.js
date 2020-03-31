@@ -7,14 +7,15 @@ module.exports = (client, msg, words) => {
       const connection = msg.member.voice.channel.join()
       const yts = require('yt-search')
       const ytdl = require('ytdl-core')
+      const url = ''
 
       yts(music, (err, r) => {
         console.log("Fourth")
 
         const video = r.videos[0]
-        const url = video.url
-        // const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
+        url = video.url
       })
+      const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
     } else {
       msg.reply("Join a voice channel first")
     }
