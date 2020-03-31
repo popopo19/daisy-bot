@@ -6,10 +6,10 @@ module.exports = (msg, words) => {
     let link = `http://api.openweathermap.org/data/2.5/weather?q=${words[1]}&appid=${process.env.WEATHER_KEY}`
     console.log("Link:", link)
     let output = ""
-    let data = got(link).then(response => {
-      console.log("THEn", response.body)
+    let data = got(link, {json:true}).then(response => {
+      return response.body
     }).catch(error => {
-      console.log("Error:", error.response.body)
+      msg.reply("Invalid City")
     })
   } else {
     msg.reply("!weather [city]")
