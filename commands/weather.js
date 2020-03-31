@@ -8,6 +8,7 @@ module.exports = (msg, words) => {
     let output = ""
     let data = got(link).then(response => {
       console.log("Body:", response.body)
+      console.log("Type:",typeof response.body)
       console.log("Name:", response.body.name)
     }).catch(error => {
       msg.reply("Invalid City")
