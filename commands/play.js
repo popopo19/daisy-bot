@@ -10,6 +10,7 @@ module.exports = (client, msg, words) => {
 
       yts(music, (err, r) => {
         const videos = r.videos
+        console.log("Video:", videos[0])
         const url = videos[0].url
         const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
       })
