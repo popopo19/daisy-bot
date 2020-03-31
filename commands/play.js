@@ -5,7 +5,7 @@ module.exports = (client, msg, words) => {
 
     if (msg.member.voice.channel) {
       const connection = msg.member.voice.channel.join()
-      console.log(connection)
+      console.log(typeof connection)
       const yts = require('yt-search')
       const ytdl = require('ytdl-core')
       const url = ''
