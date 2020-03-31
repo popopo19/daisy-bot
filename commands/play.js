@@ -4,7 +4,6 @@ module.exports = (client, msg, words) => {
   if (words.length > 1) {
 
     if (msg.member.voice.channel) {
-      const connection = msg.member.voice.channel.join()
       console.log(typeof connection)
       const yts = require('yt-search')
       const ytdl = require('ytdl-core')
@@ -15,6 +14,7 @@ module.exports = (client, msg, words) => {
         const video = r.videos[0]
         url = video.url
       })
+      const connection = msg.member.voice.channel.join()
       const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
     } else {
       msg.reply("Join a voice channel first")
