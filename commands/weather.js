@@ -7,7 +7,7 @@ module.exports = (msg, words) => {
     console.log("Link:", link)
     let data = got(link).then(response => {
       const obj = JSON.parse(response.body)
-      let output = `${obj.name}, ${obj.sys.country}\nDiscription: ${obj.weather.description}\t\tTemperature: ${(obj.main.temp - 273.15) * (9/5) + 32}F\nHumidity: ${obj.main.humidity}%`
+      let output = `${obj.name}, ${obj.sys.country}\nDiscription: ${obj.weather[0].description}\t\tTemperature: ${((obj.main.temp - 273.15) * (9/5) + 32).toFixed(2)}F\nHumidity: ${obj.main.humidity}%`
       msg.channel.send(output)
     }).catch(error => {
       msg.reply("Invalid City")
