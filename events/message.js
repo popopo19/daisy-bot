@@ -30,6 +30,10 @@ module.exports = (client, msg) => {
       const weather = require("../commands/weather.js")
       weather(msg, words)
 
+    } else if (words[0] === '!play') {
+      const play = require("../commands/weather.js")
+      play(client, msg)
+
     } else if (words[0] == '!help') {
       const help = require("../commands/help.js")
       help(msg)
