@@ -2,7 +2,6 @@ module.exports = (msg, words) => {
 
   if (words.length >= 2) {
     let name = words.slice(1).join(" ")
-    console.log("Name:", name)
 
     const got = require('got')
 

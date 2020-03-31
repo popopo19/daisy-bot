@@ -4,7 +4,8 @@
       "!dice",
       "!help",
       "!motivate",
-      "!riddle"
+      "!riddle",
+      "!weather"
     ]
   },
   "riddle" : {
