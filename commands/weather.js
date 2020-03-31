@@ -6,8 +6,9 @@ module.exports = (msg, words) => {
     let link = `http://api.openweathermap.org/data/2.5/weather?q=${words[1]}&appid=${process.env.WEATHER_KEY}`
     console.log("Link:", link)
     let output = ""
-    let data = got('https://www.google.com/')
-    console.log(data)
+    let data = got(link, response => {
+      console.log(response.body)
+    })
   } else {
     msg.reply("!weather [city]")
   }
