@@ -11,6 +11,8 @@ module.exports = (msg, words) => {
     }).catch(error => {
       msg.reply("Invalid City")
     })
+    console.log("Data: ", data)
+    console.log("Name:", data.name)
   } else {
     msg.reply("!weather [city]")
   }
