@@ -32,7 +32,7 @@ module.exports = (client, msg) => {
 
     } else if (words[0] === '!play') {
       const play = require("../commands/play.js")
-      play(client, msg)
+      play(client, msg, words)
 
     } else if (words[0] == '!help') {
       const help = require("../commands/help.js")

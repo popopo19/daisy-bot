@@ -1,7 +1,15 @@
-module.exports = (client, msg) => {
-  if (msg.member.voice.channel) {
-    const connection = await msg.member.voice.channel.join()
+module.exports = (client, msg, words) => {
+  let music = words.slice(1).join(" ")
+
+  if (words.length > 1) {
+
+    if (msg.member.voice.channel) {
+      const connection = msg.member.voice.channel.join()
+    } else {
+      msg.reply("Join a voice channel first")
+    }
+    
   } else {
-    msg.reply("Join a voice channel first")
+    msg.reply("!play [Name of song]")
   }
 }
