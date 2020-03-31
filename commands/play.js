@@ -10,11 +10,10 @@ module.exports = (client, msg, words) => {
 
       yts(music, (err, r) => {
         console.log("Fourth")
-        if (err) throw err
 
-        const video = r.videos[0]
-        const url = video.url
-        const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
+        // const video = r.videos[0]
+        // const url = video.url
+        // const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
       })
     } else {
       msg.reply("Join a voice channel first")
