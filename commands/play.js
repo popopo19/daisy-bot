@@ -13,7 +13,8 @@ module.exports = (client, msg, words) => {
         const video = r.videos[0]
         url = video.url
       })
-      const connection = msg.member.voice.channel.join()
+      msg.member.voice.channel.join()
+      const connection = client.voice.connections.array()[1]
       const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
     } else {
       msg.reply("Join a voice channel first")
