@@ -9,7 +9,7 @@ module.exports = (msg, words) => {
     let data = got(link).then(response => {
       console.log(response.body)
     }).catch(error => {
-      console.log(error.response.body)
+      console.log("Error:", error.response.body)
     })
   } else {
     msg.reply("!weather [city]")
