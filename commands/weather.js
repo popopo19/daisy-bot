@@ -7,12 +7,11 @@ module.exports = (msg, words) => {
     console.log("Link:", link)
     let output = ""
     let data = got(link, {json:true}).then(response => {
-      return response.body
+      console.log("Body:", response.body)
+      console.log("Name:", response.body.name)
     }).catch(error => {
       msg.reply("Invalid City")
     })
-    console.log("Data: ", data)
-    console.log("Name:", data.name)
   } else {
     msg.reply("!weather [city]")
   }
