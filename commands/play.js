@@ -4,7 +4,6 @@ module.exports = (client, msg, words) => {
   if (words.length > 1) {
 
     if (msg.member.voice.channel) {
-      console.log(typeof connection)
       const yts = require('yt-search')
       const ytdl = require('ytdl-core')
       const url = ''
