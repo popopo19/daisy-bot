@@ -5,12 +5,12 @@ module.exports = (client, msg, words) => {
 
     if (msg.member.voice.channel) {
       const connection = msg.member.voice.channel.join()
+      console.log(connection)
       const yts = require('yt-search')
       const ytdl = require('ytdl-core')
       const url = ''
 
       yts(music, (err, r) => {
-        console.log("Fourth")
 
         const video = r.videos[0]
         url = video.url
