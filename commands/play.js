@@ -9,9 +9,10 @@ module.exports = (client, msg, words) => {
       const ytdl = require('ytdl-core')
 
       yts(music, (err, r) => {
+        console.log("R:",r)
         const video = r.videos[0]
         console.log("Video:", video)
-        const url = videos[0].url
+        const url = video.url
         const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
       })
     } else {
