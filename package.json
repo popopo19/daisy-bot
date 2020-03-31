@@ -16,7 +16,8 @@
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.0.1",
     "got": "^10.7.0",
-    "twilio": "^3.41.1"
+    "twilio": "^3.41.1",
+    "yt-search": "^1.1.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

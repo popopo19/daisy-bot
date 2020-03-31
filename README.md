@@ -8,6 +8,8 @@ Personal bot for Discord.
 * APIs
   * Discord
   * Twilio
+  * @discordjs/opus
+  * ffmpeg-static
 
 ## Organization of the code
 
