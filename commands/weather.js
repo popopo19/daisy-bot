@@ -7,7 +7,7 @@ module.exports = (msg, words) => {
     console.log("Link:", link)
     let output = ""
     let data = got(link)
-    console.log(link)
+    console.log(data)
   } else {
     msg.reply("!weather [city]")
   }
