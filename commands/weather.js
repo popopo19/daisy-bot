@@ -7,7 +7,7 @@ module.exports = (msg, words) => {
     console.log("Link:", link)
     let output = ""
     let data = got(link).then(response => {
-      console.log(response.body)
+      console.log("THEn", response.body)
     }).catch(error => {
       console.log("Error:", error.response.body)
     })
