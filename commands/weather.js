@@ -9,8 +9,8 @@ module.exports = (msg, words) => {
     let data = got(link).then(response => {
       console.log("Body:", response.body)
       const obj = JSON.parse(response.body)
-      console.log("Type:",typeof response.body)
-      console.log("Name:", response.body.name)
+      console.log("Type:",typeof obj)
+      console.log("Name:", obj.name)
     }).catch(error => {
       msg.reply("Invalid City")
     })
