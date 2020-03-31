@@ -15,6 +15,7 @@ module.exports = (client, msg, words) => {
       })
       msg.member.voice.channel.join()
       const connection = client.voice.connections.array()[1]
+      console.log(connection)
       const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
     } else {
       msg.reply("Join a voice channel first")
