@@ -26,6 +26,10 @@ module.exports = (client, msg) => {
       const motivate = require("../commands/motivate.js")
       motivate(msg)
 
+    } else if (words[0] === '!weather') {
+      const weather = require("../commands/weather.js")
+      weather(msg, words)
+
     } else if (words[0] == '!help') {
       const help = require("../commands/help.js")
       help(msg)
