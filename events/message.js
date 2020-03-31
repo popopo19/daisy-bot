@@ -11,7 +11,7 @@ module.exports = (client, msg) => {
       const dice = require("../commands/dice.js")
       dice(msg, words)
 
-    // !rps
+    // in development
     } else if (words[0] === "!rps") {
       // let player_bot = random('rock','paper','scissor');
     } else if (words[0] === "rock" && player_bot === 'rock') {

@@ -1,6 +1,7 @@
 module.exports = (msg, words) => {
 
   if (words.length >= 2) {
+    // Get the name inputed by the user
     let name = words.slice(1).join(" ")
 
     const got = require('got')
