@@ -8,15 +8,18 @@ module.exports = (client, msg, words) => {
       const yts = require('yt-search')
       const ytdl = require('ytdl-core')
       const url = 'https://www.youtube.com/watch?v=KRcj6gkfx4c'
+      const video = null
 
       yts(music, (err, r) => {
         console.log("Once")
 
-        const video = r.videos[0]
-        url = video.url
-        // const connection = msg.member.voice.channel.join()
-        // const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
+        video = r.videos[0]
+
       })
+
+      url = video.url
+      const connection = msg.member.voice.channel.join()
+      const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
 
     } else {
       msg.reply("Join a voice channel first")
