@@ -15,18 +15,12 @@ module.exports = (client, msg, words) => {
       }
 
       search(music, opts, (err, r) => {
-        console.log(r)
+        url = r.link
+        console.log(url)
       })
 
-      // yts(music, (err, r) => {
-      //   console.log("Once")
-      //
-      //   video = r.videos[0]
-      //   console.log("First", video)
-      // })
-
-      // const connection = msg.member.voice.channel.join()
-      // const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
+      const connection = msg.member.voice.channel.join()
+      const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
 
     } else {
       msg.reply("Join a voice channel first")
