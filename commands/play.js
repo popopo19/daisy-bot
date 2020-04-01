@@ -1,5 +1,6 @@
 module.exports = (client, msg, words) => {
   let music = words.slice(1).join(" ")
+  console.log("Music:", music)
 
   if (words.length > 1) {
 
@@ -12,7 +13,8 @@ module.exports = (client, msg, words) => {
         console.log("Once")
 
         const video = r.videos[0]
-        url = video.urlconsole.log("Twice")
+        url = video.url
+        console.log("Twice")
         msg.member.voice.channel.join()
         const connection = client.voice.connections.array()[0]
         console.log("Connection:", connection)
