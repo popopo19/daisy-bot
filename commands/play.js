@@ -14,6 +14,7 @@ module.exports = (client, msg, words) => {
         const video = r.videos[0]
         url = video.url
       })
+      console.log("Twice")
       msg.member.voice.channel.join()
       const connection = client.voice.connections.array()[0]
       // console.log(connection)
