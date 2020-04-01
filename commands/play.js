@@ -6,14 +6,14 @@ module.exports = (client, msg, words) => {
     if (msg.member.voice.channel) {
       const yts = require('yt-search')
       const ytdl = require('ytdl-core')
-      const url = ''
+      const url = 'https://www.youtube.com/watch?v=KRcj6gkfx4c'
 
-      yts(music, (err, r) => {
-        console.log("Once")
-
-        const video = r.videos[0]
-        url = video.url
-      })
+      // yts(music, (err, r) => {
+      //   console.log("Once")
+      //
+      //   const video = r.videos[0]
+      //   url = video.url
+      // })
       console.log("Twice")
       msg.member.voice.channel.join()
       const connection = client.voice.connections.array()[0]
