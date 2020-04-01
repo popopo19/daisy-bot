@@ -1,34 +1,19 @@
 module.exports = (client, msg, words) => {
-  let music = words.slice(1).join(" ")
-  console.log("Music:", music)
 
-  if (words.length > 1) {
+  if (words.length == 2) {
 
     if (msg.member.voice.channel) {
-      // const yts = require('yt-search')
-      const search = require('youtube-search')
-      const ytdl = require('ytdl-core')
-      const url = 'https://www.youtube.com/watch?v=KRcj6gkfx4c'
-      const opts = {
-        maxResults: 1,
-        key: process.env.YT_KEY
-      }
-
-      // search(music, opts, (err, r) => {
-      //   url = r.link
-      //   console.log(url)
-      // })
-
       msg.member.voice.channel.join()
-      const connection = client.voice.connections.array()
-      console.log(connection)
-      const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
+      const ytdl = require('ytdl-core')
+
+      const connection = client.voice.connections.array()[0]
+      const dispatcher = connection.play(ytdl(words[1], { filter: 'audioonly' }))
 
     } else {
       msg.reply("Join a voice channel first")
     }
 
   } else {
-    msg.reply("!play [Name of song]")
+    msg.reply("!play [Youtube Link]")
   }
 }
