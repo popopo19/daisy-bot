@@ -20,7 +20,7 @@ module.exports = (client, msg, words) => {
       // })
 
       msg.member.voice.channel.join()
-      const connection = client.voice.connection
+      const connection = client.voice.connection.array()[0]
       const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
 
     } else {
