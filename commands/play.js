@@ -14,10 +14,10 @@ module.exports = (client, msg, words) => {
         key: process.env.YT_KEY
       }
 
-      search(music, opts, (err, r) => {
-        url = r.link
-        console.log(url)
-      })
+      // search(music, opts, (err, r) => {
+      //   url = r.link
+      //   console.log(url)
+      // })
 
       const connection = msg.member.voice.channel.join()
       const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
