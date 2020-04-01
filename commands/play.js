@@ -10,16 +10,12 @@ module.exports = (client, msg, words) => {
       const url = 'https://www.youtube.com/watch?v=KRcj6gkfx4c'
 
       yts(music, (err, r) => {
-        if (err) throw err;
-        console.log("Once");
+        console.log("Once")
 
-        const video = r.videos[0];
-        url = video.url;
-        console.log("Twice");
-        msg.member.voice.channel.join();
-        const connection = client.voice.connections.array()[0];
-        console.log("Connection:", connection);
-        const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
+        const video = r.videos[0]
+        // url = video.url
+        // const connection = msg.member.voice.channel.join()
+        // const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }))
       })
 
     } else {
