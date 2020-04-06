@@ -45,5 +45,8 @@
       "When something is important enough, you do it even if the odds are not in your favour. - Elon Musk",
       "The man who moves a mountain begins by carrying away small stones. - Confucius"
     ]
+  },
+  "play" : {
+    "queue" : []
   }
 }
