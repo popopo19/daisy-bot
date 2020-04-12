@@ -10,7 +10,7 @@ module.exports = (client, msg) => {
     msg.channel.send(cmd.riddle.questions[rand] + "\nTo answer: !riddle [answer] \n New riddle: !riddle -n")
 
   } else if (cmd.riddle.current != null && words.length == 1) {
-    msg.channel.send(cmd.riddle.questions[cmd.riddle.current] + "\nTo answer: !riddle [answer] \n New riddle: !riddle -n")
+    msg.channel.send(cmd.riddle.questions[cmd.riddle.current] + "\n\tTo answer: !riddle [answer] \n\tNew riddle: !riddle -n")
 
   // Checks if user answer is correct
   } else {

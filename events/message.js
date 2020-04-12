@@ -3,6 +3,7 @@ module.exports = (client, msg) => {
 
   let words = msg.content.split(" ")
   let mention_users = msg.mentions.users.array()
+  let cmd = require("../commands/cmd.json")
 
   // commands
   if (words[0][0] == '!') {
@@ -34,6 +35,10 @@ module.exports = (client, msg) => {
       const play = require("../commands/play.js")
       play(client, msg, words)
 
+    } else if (words[0] === '!poll') {
+      const poll = require("../commands/poll.js")
+      poll(client, msg, words)
+
     } else if (words[0] == '!help') {
       const help = require("../commands/help.js")
       help(msg)
@@ -49,8 +54,17 @@ module.exports = (client, msg) => {
 
   } else {
 
+
     if (msg.content.toLowerCase() === 'ping') {
       msg.reply('pong');
+    } else if (cmd.poll.using) {
+      
+      // console.log("Poll Count: " + cmd.poll.pollCount)
+      for (let i = 0; i < cmd.poll.pollCount; i++) {
+        msg.react(cmd.poll.emojis[i])
+      }
+
+      cmd.poll.using = false
     }
   }
 }
