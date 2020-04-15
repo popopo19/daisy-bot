@@ -58,8 +58,9 @@ module.exports = (client, msg) => {
     if (msg.content.toLowerCase() === 'ping') {
       msg.reply('pong');
     } else if (cmd.poll.using) {
-      
+
       // console.log("Poll Count: " + cmd.poll.pollCount)
+      msg.pin()
       for (let i = 0; i < cmd.poll.pollCount; i++) {
         msg.react(cmd.poll.emojis[i])
       }
