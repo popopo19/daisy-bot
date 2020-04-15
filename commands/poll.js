@@ -15,6 +15,7 @@ module.exports = (client, msg, word) => {
   } else if (list[0] != '') {
     // console.log("Does functions")
     cmd.poll.items = []
+    cmd.poll.votes = []
     for (let i = 0; i < list.length && list[i] != ''; i++) {
       cmd.poll.items.push(list[i])
       cmd.poll.votes.push(0)
@@ -22,7 +23,7 @@ module.exports = (client, msg, word) => {
 
     msg.channel.send(sendPoll(cmd.poll.items, cmd.poll.emojis))
 
-    cmd.poll.pollCount = list.length
+    cmd.poll.pollCount = cmd.poll.items.length
     cmd.poll.using = true
 
   } else {

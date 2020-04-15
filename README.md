@@ -4,7 +4,7 @@ Personal bot for Discord.
 ## Features
 
 * Commands
-  * !dice !help !motivate !riddle !weather
+  * !dice !help !motivate !play(In development) !poll !riddle !weather
 * APIs
   * Discord
   * Twilio
