@@ -1,6 +1,8 @@
 module.exports = (client, msg, word) => {
   const cmd = require("./cmd.json")
   let list = word.splice(1).join(" ").split(",")
+  let poll = new Poll(list, cmd.emojis)
+  cmd.poll.polls.push(poll)
 
   if (list.length > cmd.poll.emojis.length) {
     msg.reply(`Your poll can only have ${cmd.poll.emojis.length} items`)
@@ -9,7 +11,7 @@ module.exports = (client, msg, word) => {
     // console.log("command")
 
     if (list[0][1] === 'i') {
-      msg.reply(sendPoll(cmd.poll.votes, cmd.poll.items))
+      msg.reply(poll.sendPoll())
     }
 
   } else if (list[0] != '') {
@@ -34,26 +36,30 @@ module.exports = (client, msg, word) => {
 }
 
 class Poll {
-  constructor(id, items, votes, emojis) {
-    this.id = id
+  constructor(items, emojis) {
     this.items = items
-    this.votes = votes
     this.emojis = emojis
+    this.votes =
+    this.id = 0
   }
 
-  get getId() {return this.id }
+  get getId() { return this.id }
   get getItems() { return this.items }
   get getVotes() { return this.votes }
 
-  function sendPoll(items, emotes) {
+  changeId(id) {
+    this.id = id
+  }
+
+  sendPoll() {
     let output = ""
-    for (let i = 0; i < items.length; i++) {
-      output += `${emotes[i]} ${items[i]}\t\t `
+    for (let i = 0; i < this.items.length; i++) {
+      output += `${this.emojis[i]} ${this.items[i]}\t\t `
     }
     return output
   }
 
-  function announceHighest() {
+  announceHighest() {
     let highest = 0
     let indexOfHighest = 0
     for (let i = 0; i < this.votes.length; i++) {
@@ -66,7 +72,7 @@ class Poll {
     return `The most voted goes to ${this.items[indexOfHighest]} with ${highest} votes.`
   }
 
-  function announceLowest() {
+  announceLowest() {
     let lowest = 0
     let indexOfLowest = 0
     for (let i = 0; i < this.votes.length; i++) {
