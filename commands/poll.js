@@ -1,8 +1,6 @@
 module.exports = (client, msg, word) => {
   const cmd = require("./cmd.json")
   let list = word.splice(1).join(" ").split(",")
-  let poll = new Poll(list, cmd.emojis)
-  cmd.poll.polls.push(poll)
 
   if (list.length > cmd.poll.emojis.length) {
     msg.reply(`Your poll can only have ${cmd.poll.emojis.length} items`)
@@ -10,24 +8,18 @@ module.exports = (client, msg, word) => {
   } else if (list[0][0] === '-') {
     // console.log("command")
 
-    if (list[0][1] === 'i') {
-      msg.reply(poll.sendPoll())
+    if (list[0][1] === 'p') {
+      msg.channel.send(getAllPollsItems(cmd))
+    } else {
+      msg.channel.send(getOptionsHelp())
     }
 
   } else if (list[0] != '') {
-    console.log("Does functions")
-    // cmd.poll.items = []
-    // cmd.poll.votes = []
-    // for (let i = 0; i < list.length && list[i] != ''; i++) {
-    //   cmd.poll.items.push(list[i])
-    //   cmd.poll.votes.push(0)
-    // }
-    //
-    // msg.channel.send(sendPoll(cmd.poll.items, cmd.poll.emojis))
-    //
-    // cmd.poll.pollCount = cmd.poll.items.length
-    // cmd.poll.using = true
+    let poll = new Poll(list)
+    msg.channel.send(poll.sendPoll())
 
+    cmd.poll.using = true
+    cmd.poll.polls.push(poll)
 
 
   } else {
@@ -36,25 +28,33 @@ module.exports = (client, msg, word) => {
 }
 
 class Poll {
-  constructor(items, emojis) {
-    this.items = items
-    this.emojis = emojis
-    this.votes =
+  constructor(items) {
+    this.items = this.initItems(items)
+    this.keys = Object.keys(this.items)
     this.id = 0
   }
 
   get getId() { return this.id }
-  get getItems() { return this.items }
-  get getVotes() { return this.votes }
+  get getItem() { return this.items }
+  get getKeys() { return this.keys }
+
+  initItems(items) {
+    let itemsDict = {}
+    for (let i = 0; i < items.length; i++) {
+      itemsDict[items[i]] = 0;
+    }
+    return itemsDict
+  }
 
   changeId(id) {
     this.id = id
   }
 
   sendPoll() {
+    const cmd = require("./cmd.json")
     let output = ""
-    for (let i = 0; i < this.items.length; i++) {
-      output += `${this.emojis[i]} ${this.items[i]}\t\t `
+    for (let i = 0; i < this.keys.length; i++) {
+      output += `${cmd.poll.emojis[i]} ${this.keys[i]}\t\t `
     }
     return output
   }
@@ -62,27 +62,51 @@ class Poll {
   announceHighest() {
     let highest = 0
     let indexOfHighest = 0
-    for (let i = 0; i < this.votes.length; i++) {
-      if (this.votes[i] > highest) {
-        highest = this.votes[i]
+    for (let i = 0; i < this.keys.length; i++) {
+      if (this.items[this.keys[i]] > highest) {
+        highest = this.items[this.keys[i]]
         indexOfHighest = i
       }
     }
 
-    return `The most voted goes to ${this.items[indexOfHighest]} with ${highest} votes.`
+    return `The most voted goes to ${this.keys[indexOfHighest]} with ${highest} votes.`
   }
 
   announceLowest() {
     let lowest = 0
     let indexOfLowest = 0
-    for (let i = 0; i < this.votes.length; i++) {
-      if (this.votes[i] < lowest) {
-        lowest = this.votes[i]
+    for (let i = 0; i < this.keys.length; i++) {
+      if (this.items[this.keys[i]] < lowest) {
+        lowest = this.items[this.keys[i]]
         indexOfLowest = i
       }
     }
 
-    return `The unpopular vote goes to ${this.items[indexOfLowest]} with ${lowest} votes.`
+    return `The unpopular vote goes to ${this.keys[indexOfLowest]} with ${lowest} votes.`
   }
 
+  anounceItems() {
+    let output = ""
+    for (let item = 0; item < this.keys.length; item++) {
+      output += this.keys[item] + " : " + this.items[this.keys[item]]
+      if (item != this.keys.length - 1) output += ", "
+    }
+    return output
+  }
+}
+
+
+function getAllPollsItems(cmd) {
+  let output = ""
+  for (let i = 0; i < cmd.poll.polls.length; i++) {
+    output += (i + 1).toString() + ")    "
+    poll = cmd.poll.polls[i]
+    output += poll.anounceItems()
+    output += "\n"
+  }
+  return output
+}
+
+function getOptionsHelp() {
+  return "Poll Options\n\n-p\tShows recent polls"
 }

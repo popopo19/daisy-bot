@@ -12,14 +12,7 @@ module.exports = (client, msg) => {
       const dice = require("../commands/dice.js")
       dice(msg, words)
 
-    // in development
-    } else if (words[0] === "!rps") {
-      // let player_bot = random('rock','paper','scissor');
-    } else if (words[0] === "rock" && player_bot === 'rock') {
-      msg.reply('Tie');
-
-
-    } else if (words[0] === '!riddle') {
+    }  else if (words[0] === '!riddle') {
       const riddle = require("../commands/riddle.js")
       riddle(client, msg)
 
@@ -59,9 +52,7 @@ module.exports = (client, msg) => {
       msg.reply('pong');
     } else if (cmd.poll.using) {
 
-      // console.log("Poll Count: " + cmd.poll.pollCount)
-      msg.pin()
-      for (let i = 0; i < cmd.poll.pollCount; i++) {
+      for (let i = 0; i < cmd.poll.polls[cmd.poll.polls.length - 1].getKeys.length; i++) {
         msg.react(cmd.poll.emojis[i])
       }
 
