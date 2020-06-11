@@ -56,6 +56,7 @@ module.exports = (client, msg) => {
         msg.react(cmd.poll.emojis[i])
       }
 
+      cmd.poll.polls[cmd.poll.polls.length - 1].id = msg.id
       cmd.poll.using = false
     }
   }

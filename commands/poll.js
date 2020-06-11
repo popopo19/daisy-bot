@@ -15,7 +15,7 @@ module.exports = (client, msg, word) => {
     }
 
   } else if (list[0] != '') {
-    let poll = new Poll(list)
+    let poll = new Poll(msg, list)
     msg.channel.send(poll.sendPoll())
 
     cmd.poll.using = true
@@ -28,7 +28,7 @@ module.exports = (client, msg, word) => {
 }
 
 class Poll {
-  constructor(items) {
+  constructor(msg, items) {
     this.items = this.initItems(items)
     this.keys = Object.keys(this.items)
     this.id = 0
