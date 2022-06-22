@@ -15,7 +15,7 @@
     "discord.js": "^12.1.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.0.1",
-    "got": "^10.7.0",
+    "got": "^11.8.5",
     "twilio": "^3.41.1",
     "youtube-search": "^1.1.4",
     "yt-search": "^1.1.2",
